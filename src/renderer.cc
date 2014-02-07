@@ -56,7 +56,7 @@ Renderer::Renderer(int xsize, int ysize) : mainWindow_(nullptr),
 // Renderer::start()
 // Initializes the renderer, returns true on error, otherwise false
 bool Renderer::start() {
-	if ((mainWindow_ = SDL_CreateWindow("openMoM", SDL_WINDOWPOS_UNDEFINED,
+	if ((mainWindow_ = SDL_CreateWindow("Rjak", SDL_WINDOWPOS_UNDEFINED,
 	      SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, 0)) == 0) return true;
     if ((renderer_ = SDL_CreateRenderer(mainWindow_, 0, SDL_RENDERER_ACCELERATED)) == 0) return true;
 	screenSurface_ = SDL_CreateRGBSurface(0, ORIGINAL_WIDTH, ORIGINAL_HEIGHT, 32, rmask, gmask, bmask, amask);
