@@ -1,0 +1,22 @@
+Unit information format:
+
+Unit info is stored in xml files in the following fashion
+
+<unit>
+	<name>Dark Elf Swordsmen</name>
+	<id>DLFSPEAR</id>
+	<desc>Dark Elf Swordsmen are a group of slender humanoids with violet-colored skin and white hair. They dress in brown leather clothes, carry swords for up-close-and-personal combat, and a large red buckler which protects them from enemy arrows and other ranged attacks. Dark Elves are inherently magical beings, and can channel magical energy into a destructive force on a whim. They are also incredibly resistant to magic and other ill effects.</desc>
+	<cost>50</cost>
+	<upkeep gold="1" food="1" mana="0" />
+	<units>6</units>
+	<health>1</health>
+	<attack>3</attack>
+	<ranged ammo="4" type="MAGIC">1</ranged>
+	<defense>2</defense>
+	<resistance>7</resistance>
+	<movement type="WALK">1</movement>
+	<type>MUNDANE</type>
+	<abilities large_shield="true" />
+</unit>
+
+Or, if you understand xml schema, read the unitschema.xs file

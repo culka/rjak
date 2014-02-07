@@ -1,0 +1,31 @@
+Structure of .LBX files
+
+LBX files are either renamed Smacker video files, or real LBX files. Smacker files can be played as long as a codec that understands the format exists. OpenMoM uses libav to play these.
+
+Every real LBX file has a header at the start of the file, consisting of:
+
+0x00
+{
+    uint16 numEntries       - Number of entries in the file
+    uint16 ADFE             - Always ADFE, for reasons?
+    uint16 mystery1         - Seems to be zero usually
+    uint16 mystery2         - Also a mystery, no real need to understand these when just reading the file?
+}
+
+After the header, there are exactly 126 entries, each one designating the locations of the real data in the file. Note that there are usually less than the maximum of 126 resources, so the unused entries have a value of 0x0000.
+
+The rest of the file depends on it's type. Animation files have a header on each block consisting of
+
+{
+    uint16 width            - Width of the image
+    uint16 height           - Height of th eimage
+    uint16 mystery1         - ???
+    uint16 numFrames        - Number of sequent frames in this block
+    uint16 mystery2         - ???
+    uint16 mystery3         - ???
+    uint16 mystery4         - ???
+    uint16 palette          - Location of modified palette to be used. Zero if not
+    uint16 mystery5         - ???
+}
+
+The real image data starts after the header, containing width*height of uint8 color values, determined by the palette.
