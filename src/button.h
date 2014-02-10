@@ -1,6 +1,6 @@
 // button.h
 // Clickable interface button, with freeform graphics representation
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 // TODO: Add dynamic text support, ie: wait for fonts to work
 

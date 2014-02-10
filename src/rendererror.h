@@ -1,4 +1,7 @@
 // rendererror.h
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
+
 
 #ifndef RENDERERROR_H_
 #define RENDERERROR_H_

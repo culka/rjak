@@ -2,13 +2,14 @@
 // Base unit holds all the information of an unmodified unit
 // every unit gets its stats from here, only one exists per unit type
 //
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef BASEUNIT_H_
 #define BASEUNIT_H_
 
 #include <stdint.h>
 #include <string>
+#include <bitset>
 #include "gameconstants.h"
 
 struct Image;
@@ -29,10 +30,10 @@ class BaseUnit {
              uint8_t attack, uint8_t ranged, uint8_t ammo,
              uint8_t mana, uint8_t defense, uint8_t resistance,
              uint8_t tohitbonus, uint8_t movement,
-             MOVEMENTTYPE movementtype, uint8_t goldupkeep,
+             std::bitset<3> movementtype, uint8_t goldupkeep,
              uint8_t foodupkeep, uint8_t manaupkeep,
              std::string &name, std::string &description,
-             ABILITYFLAG abilities, ELEMENT element,
+             std::bitset<41> abilities, ELEMENT element,
              uint8_t firebreath, uint8_t lightningbreath,
              uint8_t deathgaze, uint8_t doomgaze,
              uint8_t stoninggaze, uint8_t thrown,
@@ -57,11 +58,11 @@ class BaseUnit {
     uint8_t getResistance() const;
     uint8_t getToHitBonus() const;
     uint8_t getMovement() const;
-    MOVEMENTTYPE getMovementType() const;
+    std::bitset<3> getMovementType() const;
     Upkeep getUpkeep() const;
     const std::string* getName();
     const std::string* getDescription();
-    ABILITYFLAG getAbilities() const;
+    std::bitset<41> getAbilities() const;
     ELEMENT getElement() const;
     bool getBreath(uint8_t &fire, uint8_t &lightning) const;
     bool getGaze(uint8_t &death, uint8_t &doom, uint8_t &stoning) const;
@@ -88,11 +89,11 @@ class BaseUnit {
     uint8_t const baseResistance_;
     uint8_t const baseToHit_;
     uint8_t const baseMovement_;
-    MOVEMENTTYPE const baseMoveType_;
+    std::bitset<3> const baseMoveType_;
     Upkeep const baseUpkeep_;
     std::string const name_;
     std::string const description_;
-    ABILITYFLAG const baseAbilities_;
+    std::bitset<41> const baseAbilities_;
     uint8_t const ability_Caster_;
     uint8_t const ability_Death_Gaze_;
     uint8_t const ability_Doom_Gaze_;

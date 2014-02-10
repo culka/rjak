@@ -1,6 +1,6 @@
 // Opens up the mysterious .lbx files which Master of Magic uses
 // This file contains the implementation
-// Teemu Mäkinen <teemu.m.makinen@tut.fi>
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #include "lbxopen.h"
 #include <fstream>

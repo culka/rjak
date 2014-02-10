@@ -1,6 +1,6 @@
 // xmlreader.cc
 // Implementation of the reader
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #include "xmlreader.h"
 

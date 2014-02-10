@@ -1,5 +1,6 @@
 // colors.h
 // Defines the palettes used by MoM
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef COLORS_H_
 #define COLORS_H_

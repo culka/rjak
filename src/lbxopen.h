@@ -1,5 +1,6 @@
 // Opens up the mysterious .lbx files which Master of Magic uses
-// Teemu Mäkinen <teemu.m.makinen@tut.fi>
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef LBXOPEN_H_
 #define LBXOPEN_H_

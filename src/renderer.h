@@ -1,5 +1,6 @@
 // Basic renderer class for rjak using SDL
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef RENDERER_H_
 #define RENDERER_H_

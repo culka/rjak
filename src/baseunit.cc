@@ -1,3 +1,7 @@
+// helper.cc
+// Some useful functions
+// Teemu Mäkinen <culkah@gmail.com> 2014
+
 #include "baseunit.h"
 
 BaseUnit::BaseUnit() : unitType_(UNIT_MUNDANE), numInUnit_(1),
@@ -5,10 +9,10 @@ BaseUnit::BaseUnit() : unitType_(UNIT_MUNDANE), numInUnit_(1),
                        baseAttack_(1), baseRanged_(0), baseAmmo_(0),
                        baseMana_(0), baseDefense_(1), baseResistance_(1),
                        baseToHit_(0), baseMovement_(1),
-                       baseMoveType_(MOVETYPE_WALK),
+                       baseMoveType_(std::bitset<3>(1)),
                        baseUpkeep_(1,1,0), name_("undefined"),
                        description_("no description"),
-                       baseAbilities_(ABILITY_NONE),
+                       baseAbilities_(std::bitset<41>(0)),
                        ability_Caster_(0), ability_Death_Gaze_(0),
                        ability_Doom_Gaze_(0), ability_Fire_Breath_(0),
                        ability_Holy_Bonus_(0), ability_Life_Steal_(0),
@@ -28,10 +32,10 @@ BaseUnit::BaseUnit(UNITTYPE unittype, uint8_t numInUnit,
                    uint8_t attack, uint8_t ranged, uint8_t ammo,
                    uint8_t mana, uint8_t defense, uint8_t resistance,
                    uint8_t tohitbonus, uint8_t movement,
-                   MOVEMENTTYPE movementtype, uint8_t goldupkeep,
+                   std::bitset<3> movementtype, uint8_t goldupkeep,
                    uint8_t foodupkeep, uint8_t manaupkeep,
                    std::string &name, std::string &description,
-                   ABILITYFLAG abilities, ELEMENT element,
+                   std::bitset<41> abilities, ELEMENT element,
                    uint8_t firebreath, uint8_t lightningbreath,
                    uint8_t deathgaze, uint8_t doomgaze,
                    uint8_t stoninggaze, uint8_t thrown,
@@ -55,6 +59,7 @@ BaseUnit::BaseUnit(UNITTYPE unittype, uint8_t numInUnit,
      ability_Scouting_(scouting), ability_Stoning_Gaze_(stoninggaze),
      ability_Stoning_Touch_(stoningtouch), ability_Thrown_(thrown),
      baseElement_(element), image_(image) {
+	
 
 }
 
@@ -110,7 +115,7 @@ uint8_t BaseUnit::getMovement() const {
     return baseMovement_;
 }
 
-MOVEMENTTYPE BaseUnit::getMovementType() const {
+std::bitset<3> BaseUnit::getMovementType() const {
     return baseMoveType_;
 }
 
@@ -126,7 +131,7 @@ const std::string* BaseUnit::getDescription() {
     return &description_;
 }
 
-ABILITYFLAG BaseUnit::getAbilities() const {
+std::bitset<41> BaseUnit::getAbilities() const {
     return baseAbilities_;
 }
 

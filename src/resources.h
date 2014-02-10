@@ -1,4 +1,7 @@
 // Resource files to be loaded
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
+
 
 #ifndef RESOURCES_H_
 #define RESOURCES_H_

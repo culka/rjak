@@ -1,6 +1,6 @@
 // The real main loop of the game and everything important is here
 //
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef GAME_H_
 #define GAME_H_

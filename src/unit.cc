@@ -1,4 +1,6 @@
 // unit.cc
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #include "unit.h"
 #include "gameconstants.h"
@@ -92,8 +94,8 @@ uint8_t Unit::getExpLevel() const {
     return level;
 }
 
-MOVEMENTTYPE Unit::getMovementType() const {
-    MOVEMENTTYPE mt = baseunit_->getMovementType();
+std::bitset<3> Unit::getMovementType() const {
+    std::bitset<3> mt = baseunit_->getMovementType();
     
     // Check for buffs
     
@@ -116,8 +118,8 @@ const std::string* Unit::getDescription() {
     return baseunit_->getDescription();
 }
 
-ABILITYFLAG Unit::getAbilities() const {
-    ABILITYFLAG ability = baseunit_->getAbilities();
+std::bitset<41> Unit::getAbilities() const {
+    std::bitset<41> ability = baseunit_->getAbilities();
     
     // Check buffs and others and add them to the flag;
     

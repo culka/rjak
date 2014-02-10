@@ -1,7 +1,7 @@
 // xmlreader.h
 // Reads unit info from xml
 // Why? Because it's easy to validate and read
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef XMLREADER_H_
 #define XMLREADER_H_

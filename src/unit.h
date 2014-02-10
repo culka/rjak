@@ -1,4 +1,6 @@
 // unit.h
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #ifndef UNIT_H_
 #define UNIT_H_
@@ -37,11 +39,11 @@ class Unit {
     uint8_t getMovement() const;
     uint16_t getExperience() const;
     uint8_t getExpLevel() const;
-    MOVEMENTTYPE getMovementType() const;
+    std::bitset<3> getMovementType() const;
     Upkeep getUpkeep() const;
     std::string* getName();
     const std::string* getDescription();
-    ABILITYFLAG getAbilities() const;
+    std::bitset<41> getAbilities() const;
     ELEMENT getElement() const;
     bool getBreath(uint8_t &fire, uint8_t &lightning) const;
     bool getGaze(uint8_t &death, uint8_t &doom, uint8_t &stoning) const;

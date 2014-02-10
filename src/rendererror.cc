@@ -1,4 +1,6 @@
 // rendererror.cc
+//
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #include "rendererror.h"
 

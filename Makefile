@@ -6,7 +6,15 @@ OFLAGS=-o -std=c++11 -Wall
 SOURCES=src/main.cc
 OBJECTS=obj/main.o obj/renderer.o obj/input.o obj/game.o obj/lbxopen.o obj/baseunit.o obj/unit.o obj/rendererror.o obj/button.o obj/xmlreader.o obj/helper.o obj/gameconstants.o
 
-all: bin/rjak
+all: directories bin/rjak
+
+directories: bin obj
+
+bin:
+	mkdir bin
+
+obj:
+	mkdir obj
 
 bin/rjak: $(OBJECTS)
 	$(CC) -Wall $(OBJECTS) $(SDL_LDFLAGS) -o bin/rjak

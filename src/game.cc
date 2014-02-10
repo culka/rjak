@@ -1,6 +1,6 @@
 // The real main loop of the game and everything important is here
 // Implementation
-// Teemu Mäkinen <teemu.m.makinen@tut.fi> 2013
+// Teemu Mäkinen <culkah@gmail.com> 2014
 
 #include <chrono>
 #include <thread>
@@ -201,19 +201,20 @@ void Game::loadUnits() {
                         
             xml.readElement("movement");            
             int movement = stringToInt(std::string(xml.getElementValue()));
-            MOVEMENTTYPE movementtype = MOVETYPE_WALK;
+            std::bitset<3> movementtype;
             std::string movementTypeString = xml.getAttributeValue("type");
             if (movementTypeString == "WALK") {
-                movementtype = MOVETYPE_WALK;
+                movementtype[MOVETYPE_WALK] = 1;
             }
             else if (movementTypeString == "SWIM") {
-                movementtype = MOVETYPE_SWIM;
+                movementtype[MOVETYPE_SWIM] = 1;
             }
             else if (movementTypeString == "FLY") {
-                movementtype = MOVETYPE_FLY;
+                movementtype[MOVETYPE_FLY] = 1;
             }
             else if (movementTypeString == "WALKSWIM") {
-                movementtype = MOVETYPE_SWIM | MOVETYPE_WALK;
+                movementtype[MOVETYPE_SWIM] = 1;
+                movementtype[MOVETYPE_WALK] = 1;
             }
             xml.closeElement();
         }
